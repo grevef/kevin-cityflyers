@@ -9,6 +9,7 @@ game 'gta5'
 files {
     'utils/client.lua',
     'utils/server.lua',
+    'locales/*.json',
 }
 
 shared_scripts {

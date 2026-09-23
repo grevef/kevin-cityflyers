@@ -1,5 +1,7 @@
 Config = Config or {}
 
+lib.locale()
+
 Config.modelLoadTimeout = 25000
 Config.zoneDebug = false
 Config.interaction = {

@@ -48,7 +48,7 @@ local function createBoss()
         entity = npc,
         options = {
             {
-                label = 'Talk',
+                label = locale('talk'),
                 icon = 'fa-solid fa-plane',
                 onSelect = function()
                     if task.isActive then return end
@@ -58,13 +58,13 @@ local function createBoss()
                         dialog = {
                             {
                                 id = 'customer_countered',
-                                job = 'City Flyers',
-                                name = 'Sherry',
-                                text = 'Hey, you look like someone who could use a few easy dollars. Local businesses pay us to get their flyers out around the city. Just walk around, hand them out, and don’t cause trouble.',
+                                job = locale('city_flyers'),
+                                name = locale('npc_name'),
+                                text = locale('npc_dialog'),
                                 buttons = {
                                     {
                                         close = true,
-                                        label = 'Accept Job',
+                                        label = locale('accept_job'),
                                         onSelect = function(switchDialog)
                                             local data = lib.callback.await('kevin-cityflyers:server:acceptJob', false)
                                             if not data then return end
@@ -74,11 +74,11 @@ local function createBoss()
                                     },
                                     {
                                         close = true,
-                                        label = 'No Thanks',
+                                        label = locale('no_thanks'),
                                         onSelect = function(switchDialog)
                                             utils.notify({
-                                                title = 'City Flyers',
-                                                description = 'Well I\'m always here when you\'re ready',
+                                                title = locale('city_flyers'),
+                                                description = locale('always_here'),
                                                 type = 'error',
                                             })
                                         end
@@ -91,7 +91,7 @@ local function createBoss()
                 distance = 2.0,
             },
             {
-                label = 'Get More Flyers',
+                label = locale('get_more_flyers'),
                 icon = 'fas fa-map',
                 onSelect = function ()
                     TriggerServerEvent('kevin-cityflyers:server:getMoreFlyers')
@@ -101,7 +101,7 @@ local function createBoss()
                 end
             },
             {
-                label = 'Complete Task',
+                label = locale('complete_task'),
                 icon = 'fas fa-check',
                 onSelect = function ()
                     local completed = lib.callback.await('kevin-cityflyers:server:completeTasks', false)
@@ -123,7 +123,7 @@ CreateThread(function ()
         sprite = 58,
         color = 43,
         scale = 0.7,
-        name = 'City Flyers'
+        name = locale('city_flyers')
     })
 
     utils.createSphereZone({
@@ -143,7 +143,7 @@ CreateThread(function ()
     utils.addGlobalPedTarget({
         options = {
             {
-                label = 'Hand Flyer',
+                label = locale('hand_flyer'),
                 icon = 'fas fa-map',
                 onSelect = function(data)
                     handPedFlyer(data.entity or data)

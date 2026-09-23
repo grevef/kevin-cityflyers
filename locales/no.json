@@ -1,0 +1,20 @@
+{
+    "city_flyers": "City Flyers",
+    "npc_name": "Sherry",
+    "npc_dialog": "Hei, du ser ut som en som kunne trenge noen lette dollar. Lokale bedrifter betaler oss for å dele ut flyers rundt i byen. Bare gå rundt, del dem ut, og ikke lag bråk.",
+    "accept_job": "Godta jobb",
+    "no_thanks": "Nei takk",
+    "always_here": "Jeg er alltid her når du er klar",
+    "talk": "Snakk",
+    "get_more_flyers": "Hent flere flyers",
+    "complete_task": "Fullfør oppgave",
+    "hand_flyer": "Del ut flyer",
+
+    "complete_current_job": "Fullfør jobben du har nå.",
+    "thanks_for_help": "Takk for hjelpen, lykke til der ute.",
+    "already_gave_out": "Du har allerede delt ut de nødvendige flyersene",
+    "handed_out_progress": "Delte ut %s/%s flyers.",
+    "all_flyers_handed_out": "Alle flyers har blitt delt ut.",
+    "flyers_remaining": "Du har fortsatt flyers igjen",
+    "flyers_remaining_get_more": "Du har fortsatt flyers, del dem ut før du kan hente flere."
+}

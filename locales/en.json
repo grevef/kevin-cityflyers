@@ -1,0 +1,20 @@
+{
+    "city_flyers": "City Flyers",
+    "npc_name": "Sherry",
+    "npc_dialog": "Hey, you look like someone who could use a few easy dollars. Local businesses pay us to get their flyers out around the city. Just walk around, hand them out, and don't cause trouble.",
+    "accept_job": "Accept Job",
+    "no_thanks": "No Thanks",
+    "always_here": "Well I'm always here when you're ready",
+    "talk": "Talk",
+    "get_more_flyers": "Get More Flyers",
+    "complete_task": "Complete Task",
+    "hand_flyer": "Hand Flyer",
+
+    "complete_current_job": "Complete your current job.",
+    "thanks_for_help": "Thanks for the help, good luck out there.",
+    "already_gave_out": "You already gave out the required flyers",
+    "handed_out_progress": "Handed out %s/%s flyers.",
+    "all_flyers_handed_out": "All flyers have been handed out.",
+    "flyers_remaining": "You still have flyers remaining",
+    "flyers_remaining_get_more": "You still have flyers, deliver them then you can get more."
+}

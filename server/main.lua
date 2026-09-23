@@ -6,7 +6,7 @@ local function acceptJob(source)
     if activeTasks[source] then
         utils.notify({
             source = source,
-            description = 'Complete your current job.',
+            description = locale('complete_current_job'),
             type = 'error',
         })
         return
@@ -31,7 +31,7 @@ local function acceptJob(source)
 
     utils.notify({
         source = source,
-        description = 'Thanks for the help, good luck out there.',
+        description = locale('thanks_for_help'),
         type = 'success'
     })
 
@@ -54,7 +54,7 @@ local function givePedFlyer(source, netId)
     if activeTasks[source].handedOut == Config.flyerAmount then
         utils.notify({
             source = source,
-            description = 'You already gave out the required flyers',
+            description = locale('already_gave_out'),
             type = 'error'
         })
         return
@@ -74,7 +74,7 @@ local function givePedFlyer(source, netId)
 
     utils.notify({
         source = source,
-        description = 'Handed out '..activeTasks[source].handedOut.. '/'.. Config.flyerAmount .. ' flyers.',
+        description = locale('handed_out_progress', activeTasks[source].handedOut, Config.flyerAmount),
         type = 'success',
         duration = 10000,
     })
@@ -86,7 +86,7 @@ local function givePedFlyer(source, netId)
     if activeTasks[source].flyers == 0 then
         utils.notify({
             source = source,
-            description = 'All flyers have been handed out.',
+            description = locale('all_flyers_handed_out'),
             type = 'success',
             duration = 10000,
         })
@@ -102,7 +102,7 @@ local function completeTasks(source)
     if activeTasks[source].flyers > 0 or activeTasks[source].handedOut < Config.flyerAmount then
         utils.notify({
             source = source,
-            description = 'You still have flyers remaining',
+            description = locale('flyers_remaining'),
             type = 'error',
             duration = 10000,
         })
@@ -143,7 +143,7 @@ RegisterNetEvent('kevin-cityflyers:server:getMoreFlyers', function ()
     if currentFlyers > 0 then
         utils.notify({
             source = source,
-            description = 'You still have flyers, deliver them then you can get more.',
+            description = locale('flyers_remaining_get_more'),
             type = 'error'
         })
         return
