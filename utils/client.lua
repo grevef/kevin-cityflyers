@@ -1,13 +1,24 @@
 local utils = {}
 
 utils.notify = function(data)
-    lib.notify({
-        title = data.title or 'Notification',
-        description = data.description or '',
-        type = data.type or 'info',
-        position = data.position or 'top-right',
-        duration = data.duration or 3000,
-    })
+    if Config.notify == 'kevin-notify' then
+        exports['kevin-notify']:Notify({
+            title = data.title or 'Notification',
+            description = data.description or '',
+            icon = data.icon,
+            duration = data.duration or 3000,
+            time = data.time or 'Just now',
+            type = data.type or 'info',
+        })
+    else
+        lib.notify({
+            title = data.title or 'Notification',
+            description = data.description or '',
+            type = data.type or 'info',
+            position = data.position or 'top-right',
+            duration = data.duration or 3000,
+        })
+    end
 end
 
 utils.createBlip = function(data)
@@ -102,22 +113,11 @@ local getTargetOptions = function(options, distance)
 end
 
 utils.addLocalEntityTarget = function(data)
-    if Config.interaction.resource == 'ox' then
-        exports.ox_target:addLocalEntity(data.entity, getTargetOptions(data.options, data.distance))
-    elseif Config.interaction.resource == 'qb' then
-        exports['qb-target']:AddTargetEntity(data.entity, {
-            options = getTargetOptions(data.options, data.distance),
-            distance = Config.interaction.distance,
-        })
-    end
+    exports.ox_target:addLocalEntity(data.entity, getTargetOptions(data.options, data.distance))
 end
 
 utils.addGlobalPedTarget = function(data)
-    if Config.interaction.resource == 'ox' then
-        exports.ox_target:addGlobalPed(getTargetOptions(data.options, data.distance))
-    elseif Config.interaction.resource == 'qb' then
-        exports['qb-target']:AddGlobalPed({getTargetOptions(data.options, data.distance), distance = 2.5})
-    end
+    exports.ox_target:addGlobalPed(getTargetOptions(data.options, data.distance))
 end
 
 return utils
