@@ -1,4 +1,4 @@
-[Docs](https://kevingirardx.gitbook.io/kevin-scripts)
+[Documentation for City Flyers](https://kevingirardx.gitbook.io/scripts/city-flyers)
 
 ## ox_inventory
 
